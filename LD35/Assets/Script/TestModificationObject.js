@@ -4,7 +4,8 @@ var ray : Ray;
 var hit : RaycastHit;
 var choisi:boolean;
 var materielselectionnee:Material;
-var Test:Script;
+var test:boolean;
+var C1: GameObject;
 function Update () {
     if(Input.GetButtonDown("Fire1")){
         if(choisi==false){
@@ -16,18 +17,17 @@ function Update () {
             for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
                 fooObj.gameObject.SetActiveRecursively(true);
             }
-            var C1: GameObject=objsel.transform.Find("TestCollision1.1").gameObject;
+            C1=objsel.transform.Find("TestCollision1.1").gameObject;
             var C2: GameObject=objsel.transform.Find("TestCollision1.2").gameObject;
             var C3: GameObject=objsel.transform.Find("TestCollision1.3").gameObject;
             var C4: GameObject=objsel.transform.Find("TestCollision1.4").gameObject;
             var C5: GameObject=objsel.transform.Find("TestCollision1.5").gameObject;
             var C6: GameObject=objsel.transform.Find("TestCollision1.6").gameObject;
             choisi=true;
-            TestC1.GetComponent("TestCollision");
             }
     }
-    if(C1.GetComponent(TestCollision).Coli==false){
-        print("Bg de la vie yay :3:3");
-    }
+}
+if(C1.gameObject.GetComponent("TestCollision").Blablabla==true){
+    test=true;
 }
 }
