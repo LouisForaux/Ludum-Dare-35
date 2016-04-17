@@ -22,19 +22,21 @@ function Update () {
             if (Physics.Raycast (ray.origin, ray.direction, hit, 100)){
                 objsel=hit.collider.gameObject;
                 if(objsel.tag=="Cube"){
-                    objsel.GetComponent.<Renderer>().material = materielselectionnee;
-                    for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
-                        fooObj.gameObject.SetActiveRecursively(true);
+                    if(objsel.gameObject.GetComponent("Rotation").inbougeable==false){
+                        objsel.GetComponent.<Renderer>().material = materielselectionnee;
+                        for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
+                            fooObj.gameObject.SetActiveRecursively(true);
+                        }
+                        C1=objsel.transform.Find("TestCollision1.1").gameObject;
+                        C2=objsel.transform.Find("TestCollision1.2").gameObject;
+                        C3=objsel.transform.Find("TestCollision1.3").gameObject;
+                        C4=objsel.transform.Find("TestCollision1.4").gameObject;
+                        C5=objsel.transform.Find("TestCollision1.5").gameObject;
+                        C6=objsel.transform.Find("TestCollision1.6").gameObject;
+                        Verif();
                     }
                 }
             }
-            C1=objsel.transform.Find("TestCollision1.1").gameObject;
-            C2=objsel.transform.Find("TestCollision1.2").gameObject;
-            C3=objsel.transform.Find("TestCollision1.3").gameObject;
-            C4=objsel.transform.Find("TestCollision1.4").gameObject;
-            C5=objsel.transform.Find("TestCollision1.5").gameObject;
-            C6=objsel.transform.Find("TestCollision1.6").gameObject;
-            Verif();
         }
     if(choisi==true){
         raya = GetComponent.<Camera>().main.ScreenPointToRay (Input.mousePosition);
@@ -67,7 +69,9 @@ function Update () {
             }
             if(indisel.tag=="Indicateurs"){
                 for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
-                fooObj.GetComponent.<Renderer>().material = materielbase;
+                if(fooObj.gameObject.GetComponent("Rotation").inbougeable==false){
+                    fooObj.GetComponent.<Renderer>().material = materielbase;
+                }
                 for(var ic:int=0; ic< fooObj.transform.childCount; ic++){
                     var childd = fooObj.transform.GetChild(ic).gameObject;
                     if(childd != null)
@@ -78,7 +82,9 @@ function Update () {
             }
     if(indisel.tag=="Cube"){
         for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
-                fooObj.GetComponent.<Renderer>().material = materielbase;
+                if(fooObj.gameObject.GetComponent("Rotation").inbougeable==false){
+                    fooObj.GetComponent.<Renderer>().material = materielbase;
+                }
                 for(var i:int=0; i< fooObj.transform.childCount; i++){
                     var childc = fooObj.transform.GetChild(i).gameObject;
                     if(childc != null)
@@ -98,7 +104,9 @@ function Verif () {
         if(C3.gameObject.GetComponent("TestCollision").CollisionCube==false && C4.gameObject.GetComponent("TestCollision").CollisionCube==false && C5.gameObject.GetComponent("TestCollision").CollisionCube==false && C6.gameObject.GetComponent("TestCollision").CollisionCube==false){
             choisi=false;
             for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
-                fooObj.GetComponent.<Renderer>().material = materielbase;
+                if(fooObj.gameObject.GetComponent("Rotation").inbougeable==false){
+                    fooObj.GetComponent.<Renderer>().material = materielbase;
+                }
                 for(var i:int=0; i< fooObj.transform.childCount; i++){
                     var child = fooObj.transform.GetChild(i).gameObject;
                     if(child != null)
@@ -112,7 +120,9 @@ if(C3.gameObject.GetComponent("TestCollision").CollisionCube==true && C4.gameObj
     if(C1.gameObject.GetComponent("TestCollision").CollisionCube==false && C2.gameObject.GetComponent("TestCollision").CollisionCube==false && C5.gameObject.GetComponent("TestCollision").CollisionCube==false && C6.gameObject.GetComponent("TestCollision").CollisionCube==false){
         choisi=false;
         for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
-            fooObj.GetComponent.<Renderer>().material = materielbase;
+            if(fooObj.gameObject.GetComponent("Rotation").inbougeable==false){
+                    fooObj.GetComponent.<Renderer>().material = materielbase;
+        }
             for(var ia:int=0; ia< fooObj.transform.childCount; ia++){
                 var childa = fooObj.transform.GetChild(ia).gameObject;
                 if(childa != null)
@@ -126,7 +136,9 @@ if(C5.gameObject.GetComponent("TestCollision").CollisionCube==true && C6.gameObj
     if(C1.gameObject.GetComponent("TestCollision").CollisionCube==false && C2.gameObject.GetComponent("TestCollision").CollisionCube==false && C3.gameObject.GetComponent("TestCollision").CollisionCube==false && C4.gameObject.GetComponent("TestCollision").CollisionCube==false){
         choisi=false;
         for(var fooObj : GameObject in GameObject.FindGameObjectsWithTag("Cube")){
-            fooObj.GetComponent.<Renderer>().material = materielbase;
+            if(fooObj.gameObject.GetComponent("Rotation").inbougeable==false){
+                    fooObj.GetComponent.<Renderer>().material = materielbase;
+        }
             for(var ib:int=0; ib< fooObj.transform.childCount; ib++){
                 var childb = fooObj.transform.GetChild(ib).gameObject;
                 if(childb != null)
