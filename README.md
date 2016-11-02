@@ -1,7 +1,9 @@
 Dernier Build : ![BUILD STAT](http://178.33.218.5:8181/job/Ludum%20Dare%2035%20-%20Steam%20Punk%20Puzzle%20Game/badge/icon)
 # Ludum Dare : Steam Punk Puzzle Game
 Theme : ShapeShift
+
 Software Used : Unity 5
+
 Plateforms : Windows (32 & 64), Web, Linux, Mac (and much more).
 
 # Why the game was'nt alrady uploaded ?
@@ -12,5 +14,10 @@ Simply why the game was under coding and developement, it was published the 19/0
 ![alt tag](http://ludumdare.com/compo/wp-content/themes/ludum/povimg/LDLogo2015.png)
 
 # Links :
+https://3t3a.cf/Sppg/BuildOnline.html : The Web Game
+
+https://3t3a.cf/Build/Build.zip : The Windows Version of the Game
+
 http://ludumdare.com/compo/ : the competition
+
 http://sppg.cf : The Official Website of this Game
